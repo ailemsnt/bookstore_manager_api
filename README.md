@@ -1,1 +1,3 @@
-# bookstore_manager_api
+## 📚 Sobre o projeto
+
+O **Bookstore Manager API** é um projeto do segundo módulo do curso SCTEC - Desenvolvedor(a) Back End Node T1, foi construído com foco educacional, aplicando conceitos fundamentais de desenvolvimento back-end com TypeScript, Express, TypeORM, organização em camadas, validações, tratamento de erros, orientação a objetos e manipulação de dados com banco de dados relacional PostgreSQL.
