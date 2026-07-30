@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { initDatabase, pool } from './infra/database/database';
 import { UsuarioPostgresRepository } from './infra/repositories/adapters/usuario-postgres.repository';
 import { RelatorioPostgresRepository } from './infra/repositories/adapters/relatorio-postgres.pository';
