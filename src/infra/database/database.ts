@@ -1,23 +1,21 @@
-import { Pool } from 'pg';
+import { DataSource } from "typeorm";
+import { Autor } from "../../model/author.model";
 
-export const pool = new Pool({
-  user: process.env.DB_USER,
+export const AppDataSource = new DataSource({
+  type: 'postgres',
   host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
-  max: 10,
-  min: 2,
-});
-
-pool.on('error', (err, client) => {
-  console.error('Unexpected error on idle client', err);
-  process.exit(-1);
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  poolSize: 10,
+  synchronize: process.env.DB_SYNCRONIZE?.toLocaleLowerCase() === 'true',
+  logging: 'all',
+  entities: [Autor],
+  migrations: [],
+  invalidWhereValuesBehavior: { undefined: 'ignore', null: 'sql-null' },
 });
 
 export async function initDatabase() {
-  
-  console.log('Iniciando banco de dados...');
-  await pool.query('SELECT 1');
-  console.log('Banco de dados iniciado com sucesso!');
+  await AppDataSource.initialize();
 }

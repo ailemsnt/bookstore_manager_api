@@ -1,7 +1,5 @@
-.vscode/
-node_modules/
-dist/
+.vs_code
+node_modules
+dist
 .env
-auxiliador.ts
-seed_login.sql
-seed_test.sql
+teste.http

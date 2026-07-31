@@ -58,7 +58,7 @@ const config = defineConfig(
           caughtErrorsIgnorePattern: '_'
         }
       ],
-      'import/no-unresolved': 'on',
+      'import/no-unresolved': 'error',
       'import/named': 'off',
       'import/order': [
         'error',
